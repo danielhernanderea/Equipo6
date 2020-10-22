@@ -18,53 +18,29 @@ export class RegisterScreen extends Component{
     apPat: "",
     apMat: "",
     dateB: "",
-    curp: "",
     password: "",
     repPassword: "",
     email: "",
     date : "2016-05-15"
   }
 
-  
-render(){
-  return(
-    <View style={styles.container}>
-    <Form type= 'RegisterScreen'/>
-    <view style={styles.RegisterTextCont}
-      <Text style={styles.RegisterText}>Registro</Text>
-      <TouchableOpacity onPress={this.signup}>Registro</TouchableOpacity>
-    </view>
-    </view>
-  )
-  }
+
 }
-
-
 
 
 
 onChangeEmail = email => this.setState({email});
 onChangePassword = password => this.setState({password});
-onChangeRepPassword = repPassword => this.setState({repPassword});
-onChangeName = name => this.setState({name});
-onChangeApPat = apPat => this.setState({apPat});
-onChangeApMat = apMat => this.setState({apMat});
-onChangeCurp = curp => this.setState({curp});
-onChangeDateB = dateB => this.setState({dateB});
 
 
   onPressRegister = async () =>{
     
-    const {email, password, name, apMat, apPat, repPassword, dateB, curp} = this.state;
+    const {email, password, name} = this.state;
     console.log("datos de registro:")
     console.log("email:"+email)
     console.log("contraseña: "+ password)
-    console.log("nombre : "+name)
-    console.log("Ap Mat: " +apMat)
-    console.log("Ap Pat: "+apPat)
  
-    console.log("fechha nacimiento: "+dateB)
-    console.log("curp: "+curp)
+
 
 if(password == repPassword){
   if(email.length>0 && password.length>0 && name.length>0 && apPat.length>0 && apMat.length>0 && curp.length>0 && dateB.length>0)
@@ -90,7 +66,7 @@ if(password == repPassword){
                        
                   }else{
                          Alert.alert(' Informacion  incorrecta ')
-                        console.log("info incorrecta d")
+                        console.log("información incorrecta")
                        
                    }
         });
@@ -98,7 +74,7 @@ if(password == repPassword){
 
     }catch(error){
       console.log("hay un error: "+error)
-      Alert.alert("Hubo un error. Intentelo mÃ¡s tarde.")
+      Alert.alert("Hubo un error. Intentelo mas tarde.")
      
     }
   }else{
@@ -109,13 +85,6 @@ if(password == repPassword){
 }else{
   Alert.alert("Verifica que escribiste bien dos veces tu contraseÃ±a")
 }
-
-
-
-
-
-
-
 
 
 
@@ -146,48 +115,11 @@ render(){
                      onChangeText={this.onChangeName}
                
           />
+          
+          
+          
           </View>
-          <View style = {styles.inputContainer}>
-            <TextInput
-                     style={styles.input}
-                     placeholder={'APELLIDO PATERNO'}
-                     placeholderTextColor={ '#6f6f6e'}
-                     underlineColorAndroid = 'transparent'
-                     onChangeText={this.onChangeApPat}
-               
-          />
-        </View>
-          <View style = {styles.inputContainer}>
-            <TextInput
-                     style={styles.input}
-                     placeholder={'APELLIDO MATERNO'}
-                     placeholderTextColor={ '#6f6f6e'}
-                     underlineColorAndroid = 'transparent'
-                     onChangeText={this.onChangeApMat}
-               
-          />
-          </View>
-          <View style = {styles.inputContainer}>
-           <TextInput
-                     style={styles.input}
-                     placeholder={'F.NACIMIENTO AAAA-MM-DD'}
-                     placeholderTextColor={ '#6f6f6e'}
-                     underlineColorAndroid = 'transparent'
-                     onChangeText={this.onChangeDateB}
-               
-          />
-          </View>
-          <View style = {styles.inputContainer}>
-           <TextInput
-                     style={styles.input}
-                     placeholder={'CURP'}
-                     placeholderTextColor={ '#6f6f6e'}
-                     underlineColorAndroid = 'transparent'
-                     autoCapitalize= 'none'
-                     onChangeText={this.onChangeCurp}
-               
-          />
-          </View>
+
 
 
           <View style = {styles.inputContainer}>
@@ -216,19 +148,6 @@ render(){
           </View>
 
 
-
-           <View style = {styles.inputContainer}>
-              <TextInput
-                     style={styles.input}
-                     placeholder={'REPETIR CONTRASEÑA'}
-                     placeholderTextColor={ '#6f6f6e'}
-                     underlineColorAndroid = 'transparent'
-                     secureTextEntry={true}
-                     autoCapitalize= 'none'
-                     onChangeText={this.onChangeRepPassword}
-               
-               />
-          </View>
         
 
 
