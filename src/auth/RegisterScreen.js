@@ -29,9 +29,9 @@ export class RegisterScreen extends Component{
 render(){
   return(
     <View style={styles.container}>
-    <Form type= 'Registro'/>
-    <view style={styles.signupTextCont}
-      <Text style={styles.signupText}>Registro</Text>
+    <Form type= 'RegisterScreen'/>
+    <view style={styles.RegisterTextCont}
+      <Text style={styles.RegisterText}>Registro</Text>
       <TouchableOpacity onPress={this.signup}>Registro</TouchableOpacity>
     </view>
     </view>
