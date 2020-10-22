@@ -109,7 +109,7 @@ if(email.length>0 && password.length>0)
        return (
        
        <SafeAreaView style={{flex:1}} >
-       <ImageBackground source={IMAGE.MI_FONDO} style= {styles.backgroundContainer}>
+       <ImageBackground source={IMAGE.FONDO_HOME_FIDE} style= {styles.backgroundContainer}>
        <View style={{  alignItems:"center",width:wp('100%'), height: hp('100%'), justifyContent: "center"
                         
                        }}>
@@ -152,7 +152,11 @@ if(email.length>0 && password.length>0)
              <TouchableOpacity style = {styles.botonLogin}
                                 //  onPress={this.onSubmit}
                                 onPress={() => 
+<<<<<<< HEAD
                                 this.onSubmit()}
+=======
+                                this.onSubmit}
+>>>>>>> 8ce0770d181635499996d828532dc9d4e4dc3152
               >
                    <Text style={styles.text}>ENTRAR</Text>
               </TouchableOpacity>

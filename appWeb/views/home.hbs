@@ -1,0 +1,61 @@
+<html lang='es'>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <title>Principal</title>
+    </head>
+    <body class = "w3-display-middle  w3-blue-gray w3-center">
+        <div class = "w3-center w3-blue-gray">
+            <h1><b>¡Bienvenido!</b></h1>
+        </div>
+        <div>
+            <h3>Instrucciones: Ingrese sus datos para realizar el registro</h3>
+            <form action="registro" method="POST" class="w3-container w3-center">
+                <label for="nombre">Nombre:</label><input class="w3-animate-input" id="nombre" style="width:60%" type="text" name="nombre" required/><br><br>
+                <label for="apellido_p">Apellido Paterno:</label><input class="w3-animate-input" id="apellido_p" style="width:60%" type="text" name="apellido_p" required/><br><br>
+                <label for="apellido_m">Apellido Materno:</label><input class="w3-animate-input" id="apellido_m" style="width:60%" type="text" name="apellido_m" required/><br><br>
+                <label for="email">Email:</label><input class="w3-animate-input" id="email" style="width:60%" type="text" name="email" required/><br><br>
+                <label for="pass">Password:</label><input class="w3-animate-input" type="password" id="pass" style="width:60%" type="text" name="pass" required/><br><br>
+                <input class="w3-button w3-indigo" type="submit" value="Registrar"/>
+            </form><br>
+        </div>
+        <div class = "w3-center w3-blue-gray">
+            <h3><b>¿Ya tienes una cuenta?</b></h3>
+        </div>
+        <div class="w3-container">
+            <a href="/ingreso" class="w3-button w3-indigo">Ingresar</a>
+            </ul>
+        </div>
+        <div class="w3-center w3-small">
+          <p>&copy; Team Hackathon</p>
+        </div>
+    </body>
+</html>
+
+<form id="Login" method="post">
+ Nombre: <input type="text" name="nombre" value=""><br>
+ Apellido Paterno: <input type="text" name="apellidop" value=""><br>
+ Apellido Materno: <input type="text" name="apellidom" value=""><br>
+ Email: <input type="email" name="email" value="" placeholder="escribe tu correo"><br>
+ Password: <input type="password" name="password" value="" placeholder="escribe tu password"><br>
+ <br><br>
+ <input type="submit" value="Login">
+ </form>
+
+ <script type="text/javascript">
+ const formLogin=document.querySelector('#Login')
+ const formData = new FormData(formLogin)
+
+ formLogin.addEventListener('submit', event => {
+   event.preventDefault()
+   fetch('/home', {
+     method: 'GET',
+     body: formData
+   })
+   .then(res => res.json())
+   .then(data => {
+     localStorage.setItem('token', data.token)
+  })
+ })
+ </script>
