@@ -43,7 +43,7 @@ onChangePassword = password => this.setState({password});
 
 
 if(password == repPassword){
-  if(email.length>0 && password.length>0 && name.length>0 && apPat.length>0 && apMat.length>0 && curp.length>0 && dateB.length>0)
+  if(email.length>0 && password.length>0 && name.length>0 && apPat.length>0 && apMat.length>0 && dateB.length>0)
   {
     try{
         var resultAPI = await axios.get(''
