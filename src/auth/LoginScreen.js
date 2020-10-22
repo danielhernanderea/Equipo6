@@ -48,7 +48,7 @@ export class  LoginScreen extends React.Component {
       if(state.isConnected){
         console.log("SÍ ESTÁ CONECTADO A INTERENET")
       }else{
-        console.log("NO ESTÁ CONECTADO A INTERENET :(")
+        console.log("NO ESTÁ CONECTADO A INTERENET LO SIENTO")
         Alert.alert("No está conectado a internet, se necesita conexión para que la app funcione")
       }
     });
