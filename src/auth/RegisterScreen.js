@@ -7,7 +7,6 @@ import { IMAGE } from '../constans/Image';
 import {CustomHeader} from '../index'
 import { ScrollView } from 'react-native-gesture-handler';
 
-//coment
 
 export class RegisterScreen extends Component{
 
@@ -25,7 +24,23 @@ export class RegisterScreen extends Component{
     email: "",
     date : "2016-05-15"
   }
+
+  
+render(){
+  return(
+    <View style={styles.container}>
+    <Form type= 'Registro'/>
+    <view style={styles.signupTextCont}
+      <Text style={styles.signupText}>Registro</Text>
+      <TouchableOpacity onPress={this.signup}>Registro</TouchableOpacity>
+    </view>
+    </view>
+  )
+  }
 }
+
+
+
 
 
 onChangeEmail = email => this.setState({email});
@@ -41,7 +56,7 @@ onChangeDateB = dateB => this.setState({dateB});
   onPressRegister = async () =>{
     
     const {email, password, name, apMat, apPat, repPassword, dateB, curp} = this.state;
-console.log("datos de registro:")
+    console.log("datos de registro:")
     console.log("email:"+email)
     console.log("contraseña: "+ password)
     console.log("nombre : "+name)
