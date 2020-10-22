@@ -7,6 +7,7 @@ import { IMAGE } from '../constans/Image';
 import {CustomHeader} from '../index'
 import { ScrollView } from 'react-native-gesture-handler';
 
+//coment
 
 export class RegisterScreen extends Component{
 
